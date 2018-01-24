@@ -1,0 +1,30 @@
+body {
+  text-align: center;
+  background-color: black;
+  font-family: arial;
+  color: white;
+}
+header {
+  border-bottom: 1px solid white;
+}
+
+
+
+
+/* #edit {
+  text-align: center;
+  width: 10px;
+  height: 10px;
+  background: none;
+  outline: none;
+  border: 1px solid #fff;
+  font-family: arial;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 50%;
+}
+td:first-child #edit {
+  border-radius: 0;
+  width: 50px;
+} */
