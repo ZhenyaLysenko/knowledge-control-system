@@ -4,44 +4,42 @@ addClient.addEventListener('click', () => {
   let lastStudent = students[students.length - 1];
   const _table = document.querySelector(".users");
   let newStudent = lastStudent.cloneNode(true);
-
   _table.appendChild(newStudent);
 
   const removeBtn = document.querySelectorAll(".closeRow");
-
-   function removeItem(e) {
+  function removeItem(e) {
       e.preventDefault();
       let itemList = document.querySelectorAll(".student");
       if(itemList.length > 1) {
          e.target.parentNode.parentNode.remove();
       }
-   };
-   removeBtn.forEach(el => el.addEventListener("click", removeItem));
+  };
+  removeBtn.forEach(el => el.addEventListener("click", removeItem));
 })
 
-const addBtn = document.querySelector("#addArea");
-
-addBtn.addEventListener('click',function () {
-  let question  = prompt('Area name', 'javascript');
-
+  let num = 4;
+  const addBtn = document.querySelector("#addArea");
+  addBtn.addEventListener('click', function() {
+  let question = prompt('Area name', 'php');
   let newHead = document.createElement('th');
+  (function () {
+    newHead.setAttribute("onclick", `sortTable(${num++})`);
+  })()
   newHead.innerHTML = `${question}`;
 
-
-  const headArea = document.querySelector('.area2');
+  const headArea = document.querySelector('.area');
   headArea.appendChild(newHead);
   let student = document.querySelectorAll(".student");
-
   student.forEach(el => {
     let newInput = document.createElement("td");
-    newInput.innerHTML = '<input type="text">';
+    newInput.innerHTML = '<input class="sortInput" onfocus="this.select()" type="text" value="0">';
     el.appendChild(newInput);
   });
-
 })
+
 function sortTable(n) {
-  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-  table = document.getElementById("myTable");
+  let table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("sortTable");
   switching = true;
   dir = "asc";
   while (switching) {
@@ -52,12 +50,12 @@ function sortTable(n) {
       x = rows[i].getElementsByClassName("sortInput")[n];
       y = rows[i + 1].getElementsByClassName("sortInput")[n];
       if (dir == "asc") {
-        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+        if (x.value.toLowerCase() > y.value.toLowerCase()) {
           shouldSwitch= true;
           break;
         }
       } else if (dir == "desc") {
-        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+        if (x.value.toLowerCase() < y.value.toLowerCase()) {
           shouldSwitch= true;
           break;
         }
@@ -75,20 +73,3 @@ function sortTable(n) {
     }
   }
 }
-
-
-
-
-
-
-// document.querySelector(".save").addEventListener('click', function () {
-//   let studentsArr = document.querySelectorAll('.student');
-//   studentsArr.forEach(el => {
-//     let inputs = el.querySelectorAll('input');
-//     let studentObj = {};
-//     inputs.forEach(input => {
-//       studentObj.param = input.value;
-//       console.log(studentObj);
-//     })
-//   })
-// })

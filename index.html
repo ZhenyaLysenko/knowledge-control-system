@@ -11,32 +11,34 @@
 		<h1 class="title">knowledge control system</h1>
 	</header>
 	<main>
-		<section>
-			<input type="button" value="addClient" id="addClient">
-			<input type="button" value="addArea" id="addArea">
-			<button class="save"></button>
-			<table id="myTable" class="table" align="center" cellspacing="35" frame="below">
-					<thead class="area">
-						<tr class="area2">
+		<section class="mainSection">
+			<div class="inputs">
+				<input class="inputs-btn" type="button" value="add client" id="addClient">
+				<input class="inputs-btn" type="button" value="add area" id="addArea">
+			</div>
+			<table id="sortTable" class="table" align="center" frame="below">
+					<thead>
+						<tr class="area">
 							<th></th>
 							<th onclick="sortTable(0)">Name</th>
-    					<th onclick="sortTable(1)">Country</th>
+    					<th onclick="sortTable(1)">js</th>
 				      <th onclick="sortTable(2)">c++</th>
 				      <th onclick="sortTable(3)">java</th>
 						</tr>
 			  	</thead>
 				<tbody class="users">
 						<tr class="student">
-							<td class="closeRow"><button>X</button></td>
-							<td><input class="sortInput" type="text" value="name"></td>
-							<td><input class="sortInput" type="text" value="mark"></td>
-							<td><input class="sortInput" type="text" value="mark"></td>
-							<td><input class="sortInput" type="text" value="mark"></td>
+							<td class="closeRow"><button class="close">x</button></td>
+							<td><input class="sortInput" onfocus="this.select()" type="text" value="name"></td>
+							<td><input class="sortInput" onfocus="this.select()" type="text" value="0"></td>
+							<td><input class="sortInput" onfocus="this.select()" type="text" value="0"></td>
+							<td><input class="sortInput" onfocus="this.select()" type="text" value="0"></td>
 						</tr>
 				</tbody>
    		</table>
 		</section>
 	</main>
+	
 	<script src="./main.js"></script>
 </body>
 </html>
