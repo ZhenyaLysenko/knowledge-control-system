@@ -4,6 +4,7 @@ body {
   background-color: #000;
   font-family: arial;
   color: #fff;
+  height: 100wh;
 }
 header {
   border-bottom: 1px solid #fff;
@@ -16,9 +17,9 @@ table {
   border-collapse: separate;
 }
 .mainSection {
-  overflow: auto;
-  height: 735px;
+  overflow: scroll;
   z-index: 10;
+  height: 635px;
 }
 .sortInput,
 .inputs-btn {
@@ -85,10 +86,7 @@ footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+
   z-index: 20;
   background: #000;
 }
